@@ -47,7 +47,7 @@ def build_model():
     pipeline = Pipeline([
         ('vect', CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
-        ('clf', MultiOutputClassifier(KNeighborsClassifier(n_neighbors=15, n_jobs=-1)))
+        ('clf', MultiOutputClassifier(KNeighborsClassifier(n_neighbors=20, n_jobs=-1)))
     ])
     
     return pipeline
