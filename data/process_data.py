@@ -13,7 +13,9 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
-    
+    '''This function will take in a Dataset and returns a cleaned version of it 
+    '''
+    #split the categories column into multiple columns
     categories = df['categories'].str.split(';', expand=True)
     
     #getting column names for categories
@@ -31,6 +33,7 @@ def clean_data(df):
     
     df = df.drop(['categories'], axis=1)
     df = pd.concat([df,categories], axis=1)
+    #drops all the duplicate rows
     df = df[df.duplicated() == False]
     
     return df

@@ -22,6 +22,7 @@ def load_data(database_filepath):
     engine = create_engine('sqlite:///' + database_filepath)
     df = pd.read_sql_table('InsertTableName', con=engine)
     
+    #this will drop all the messages that aren't categorized
     df = df.dropna(thresh=10).drop(['original'], axis=1)
     X = df.iloc[:,1]
     y = df.iloc[:,5:]
