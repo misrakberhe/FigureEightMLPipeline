@@ -1,6 +1,10 @@
 # Disaster Response Pipeline Project
 
-### Instructions:
+This project is a way to help responders during a crisis sift through messages they receive, and categorize what the message is saying quickly. This is to reduce the already heavy burden on responding agencies in a disaster and so that they can address and parse all the information coming at them. The training dataset was provided by FigureEight.
+
+A message only needs to be inputted into the web app and it will be assigned to the relevant categories. 
+
+### Instructions to run web app:
 1. Run the following commands in the project's root directory to set up your database and model.
 
     - To run ETL pipeline that cleans data and stores in database
@@ -11,4 +15,14 @@
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
-3. Go to http://0.0.0.0:3001/
+
+### Built with:
+
+Bootstrap - web framework used
+
+Flask 
+
+### Notes
+
+This particular pipeline isn't quite accurate. One of the challenges was the long training time when looking for optimal parameters, the parameters that were checked were just how many n_neighbors the classifier took. There is a lot more room for optimization in that space. 
+
